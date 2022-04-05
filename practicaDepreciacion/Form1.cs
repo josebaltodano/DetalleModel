@@ -19,7 +19,7 @@ namespace practicaDepreciacion
         Empleado empleado;
         private int SelecionarId;
      
-        public Form1(IActivoServices ActivoServices,Empleado empleado)
+        public Form1(IActivoServices ActivoServices, Empleado empleado)
         {
             this.empleado = empleado;
             this.activoServices = ActivoServices;

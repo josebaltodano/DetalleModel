@@ -250,6 +250,7 @@ namespace Infraestructure.Repository
                         bwHeader.Write(++n);
                         bwHeader.Write(k);
                     }
+
                 }
             }
             catch (IOException)

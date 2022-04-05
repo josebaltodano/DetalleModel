@@ -42,3 +42,14 @@ C:\Users\carlo\OneDrive\Escritorio\zXZ\AppCore\obj\Debug\AppCore.csproj.CoreComp
 C:\Users\carlo\OneDrive\Escritorio\zXZ\AppCore\obj\Debug\AppCore.csproj.CopyComplete
 C:\Users\carlo\OneDrive\Escritorio\zXZ\AppCore\obj\Debug\AppCore.dll
 C:\Users\carlo\OneDrive\Escritorio\zXZ\AppCore\obj\Debug\AppCore.pdb
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\bin\Debug\AppCore.dll
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\bin\Debug\AppCore.pdb
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\bin\Debug\Domain.dll
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\bin\Debug\Infraestructure.dll
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\bin\Debug\Domain.pdb
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\bin\Debug\Infraestructure.pdb
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\obj\Debug\AppCore.csprojAssemblyReference.cache
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\obj\Debug\AppCore.csproj.CoreCompileInputs.cache
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\obj\Debug\AppCore.csproj.CopyComplete
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\obj\Debug\AppCore.dll
+C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\AppCore\obj\Debug\AppCore.pdb
