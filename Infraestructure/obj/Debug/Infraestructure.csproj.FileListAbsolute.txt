@@ -42,3 +42,12 @@ C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\Infraestructure\obj\Debug\In
 C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
 C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\Infraestructure\obj\Debug\Infraestructure.dll
 C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\Infraestructure\obj\Debug\Infraestructure.pdb
+C:\Users\Cristina\OneDrive\Escritorio\detallemodel\DetalleModel\Infraestructure\bin\Debug\Infraestructure.dll
+C:\Users\Cristina\OneDrive\Escritorio\detallemodel\DetalleModel\Infraestructure\bin\Debug\Infraestructure.pdb
+C:\Users\Cristina\OneDrive\Escritorio\detallemodel\DetalleModel\Infraestructure\bin\Debug\Domain.dll
+C:\Users\Cristina\OneDrive\Escritorio\detallemodel\DetalleModel\Infraestructure\bin\Debug\Domain.pdb
+C:\Users\Cristina\OneDrive\Escritorio\detallemodel\DetalleModel\Infraestructure\obj\Debug\Infraestructure.csproj.AssemblyReference.cache
+C:\Users\Cristina\OneDrive\Escritorio\detallemodel\DetalleModel\Infraestructure\obj\Debug\Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\Cristina\OneDrive\Escritorio\detallemodel\DetalleModel\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
+C:\Users\Cristina\OneDrive\Escritorio\detallemodel\DetalleModel\Infraestructure\obj\Debug\Infraestructure.dll
+C:\Users\Cristina\OneDrive\Escritorio\detallemodel\DetalleModel\Infraestructure\obj\Debug\Infraestructure.pdb

@@ -16,6 +16,7 @@ namespace practicaDepreciacion
     public partial class EmpleadoForm : Form
     {
         IEmpleadoServices empleado;
+        Empleado empleado4; 
         IActivoServices activoServices;
         public EmpleadoForm(IEmpleadoServices empleadoServices, IActivoServices ActivoServices)
         {
@@ -48,14 +49,14 @@ namespace practicaDepreciacion
                 
             };
             empleado.Add(empleado1);
-            dgvView.DataSource = null;
+            dgempleado.DataSource = null;
             Limpiar();
-            dgvView.DataSource = empleado.Read();
+            dgempleado.DataSource = empleado.Read();
         }
 
         private void EmpleadoForm_Load(object sender, EventArgs e)
         {
-            dgvView.DataSource = empleado.Read();
+            dgempleado.DataSource = empleado.Read();
         }
 
         private void dgvView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -65,6 +66,19 @@ namespace practicaDepreciacion
                 Form1 activo = new Form1(activoServices,empleado.GetById(1));
                 activo.ShowDialog();
             }
+        }
+
+        private void btnborrar_Click(object sender, EventArgs e)
+        {
+            Empleado empleado2 = new Empleado()
+            {
+                Id = (int)numericUpDown1.Value
+            };
+            numericUpDown1.Value = 0;
+            empleado.Delete(empleado2);
+            dgempleado.DataSource = null;
+            Limpiar();
+            dgempleado.DataSource = empleado.Read();
         }
     }
 }

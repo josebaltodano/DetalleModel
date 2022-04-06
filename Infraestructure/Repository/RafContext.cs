@@ -181,14 +181,92 @@ namespace Infraestructure.Repository
                         long pos = k * size;
                         bwData.BaseStream.Seek(pos, SeekOrigin.Begin);
 
+                        //PropertyInfo[] info = t.GetType().GetProperties();
+                        //foreach (PropertyInfo pinfo in info)
+                        //{
+                        //    Type type = pinfo.PropertyType;
+                        //    object obj = pinfo.GetValue(t, null);
+
+                        //    if (type.IsGenericType)
+                        //    {
+                        //        continue;
+                        //    }
+
+                        //    if (pinfo.Name.Equals("Id", StringComparison.CurrentCultureIgnoreCase))
+                        //    {
+                        //        bwData.Write(++k);
+                        //        continue;
+                        //    }
+
+                        //    if (type == typeof(int))
+                        //    {
+                        //        bwData.Write((int)obj);
+                        //    }
+                        //    else if (type.IsEnum)
+                        //    {
+                        //        bwData.Write((int)obj);
+                        //    }
+                        //    else if (type == typeof(long))
+                        //    {
+                        //        bwData.Write((long)obj);
+                        //    }
+                        //    else if (type == typeof(float))
+                        //    {
+                        //        bwData.Write((float)obj);
+                        //    }
+                        //    else if (type == typeof(double))
+                        //    {
+                        //        bwData.Write((double)obj);
+                        //    }
+                        //    else if (type == typeof(decimal))
+                        //    {
+                        //        bwData.Write((decimal)obj);
+                        //    }
+                        //    else if (type == typeof(char))
+                        //    {
+                        //        bwData.Write((char)obj);
+                        //    }
+                        //    else if (type == typeof(bool))
+                        //    {
+                        //        bwData.Write((bool)obj);
+                        //    }
+                        //    else if (type == typeof(string))
+                        //    {
+                        //        bwData.Write((string)obj);
+                        //    }else if (type.IsClass)
+                        //    {
+                        //        //object obj = ;
+                        //        //int id1 = (int)obj.GetType().GetProperty("Id").GetValue(obj);
+                        //        GetClass(obj, bwData);
+                        //        //bwData.Write(id1);
+                        //    }
+                        //}
                         PropertyInfo[] info = t.GetType().GetProperties();
                         foreach (PropertyInfo pinfo in info)
                         {
+
+
                             Type type = pinfo.PropertyType;
                             object obj = pinfo.GetValue(t, null);
 
+                            if (!type.IsPrimitive && type.IsClass && type != Type.GetType("System.String"))
+                            {
+                                PropertyInfo[] infoClass = obj.GetType().GetProperties();
+                                object objectClass = Activator.CreateInstance(obj.GetType());
+                                foreach (PropertyInfo PInfoClass in infoClass)
+                                {
+                                    if (PInfoClass.Name.Equals("Id", StringComparison.CurrentCultureIgnoreCase))
+                                    {
+                                        bwData.Write(0);
+                                        break;
+                                    }
+                                }
+                                continue;
+                                //WriteObject(obj, bwData);
+                            }
                             if (type.IsGenericType)
                             {
+
                                 continue;
                             }
 
@@ -201,48 +279,52 @@ namespace Infraestructure.Repository
                             if (type == typeof(int))
                             {
                                 bwData.Write((int)obj);
-                            }
-                            else if (type.IsEnum)
-                            {
-                                bwData.Write((int)obj);
+                                continue;
                             }
                             else if (type == typeof(long))
                             {
+
                                 bwData.Write((long)obj);
+                                continue;
                             }
                             else if (type == typeof(float))
                             {
                                 bwData.Write((float)obj);
+                                continue;
                             }
                             else if (type == typeof(double))
                             {
                                 bwData.Write((double)obj);
+                                continue;
                             }
                             else if (type == typeof(decimal))
                             {
                                 bwData.Write((decimal)obj);
+                                continue;
                             }
                             else if (type == typeof(char))
                             {
                                 bwData.Write((char)obj);
+                                continue;
                             }
                             else if (type == typeof(bool))
                             {
                                 bwData.Write((bool)obj);
+                                continue;
                             }
                             else if (type == typeof(string))
                             {
                                 bwData.Write((string)obj);
-                            }else if (type.IsClass)
+                                continue;
+                            }
+                            if (type.IsEnum)
                             {
-                                //object obj = ;
-                                //int id1 = (int)obj.GetType().GetProperty("Id").GetValue(obj);
-                                GetClass(obj, bwData);
-                                //bwData.Write(id1);
+                                bwData.Write((int)obj);
+                                continue;
                             }
                         }
 
-                        long posh = 8 + n * 4;
+                            long posh = 8 + n * 4;
                         bwHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
                         bwHeader.Write(k);
 
@@ -560,6 +642,72 @@ namespace Infraestructure.Repository
                     }
                 }
                 return -1;
+            }
+        }
+        private void WriteObject(object t, BinaryWriter bwData)
+        {
+            if (t == null)
+            {
+                return;
+            }
+            PropertyInfo[] infoClass = t.GetType().GetProperties();
+            foreach (PropertyInfo pinfoclass in infoClass)
+            {
+                Type typeOne = pinfoclass.PropertyType;
+                object obj = pinfoclass.GetValue(t, null);
+                if (!typeOne.IsPrimitive && typeOne.IsClass && typeOne != Type.GetType("System.String"))
+                {
+                    WriteObject(obj, bwData);
+                }
+                if (typeOne.IsGenericType)
+                {
+                    continue;
+                }
+                if (typeOne == typeof(int))
+                {
+                    bwData.Write((int)obj);
+                    continue;
+                }
+                else if (typeOne == typeof(long))
+                {
+                    bwData.Write((long)obj);
+                    continue;
+                }
+                else if (typeOne == typeof(float))
+                {
+                    bwData.Write((float)obj);
+                    continue;
+                }
+                else if (typeOne == typeof(double))
+                {
+                    bwData.Write((double)obj);
+                    continue;
+                }
+                else if (typeOne == typeof(decimal))
+                {
+                    bwData.Write((decimal)obj);
+                    continue;
+                }
+                else if (typeOne == typeof(char))
+                {
+                    bwData.Write((char)obj);
+                    continue;
+                }
+                else if (typeOne == typeof(bool))
+                {
+                    bwData.Write((bool)obj);
+                    continue;
+                }
+                else if (typeOne == typeof(string))
+                {
+                    bwData.Write((string)obj);
+                    continue;
+                }
+                if (typeOne.IsEnum)
+                {
+                    bwData.Write((int)obj);
+                    continue;
+                }
             }
         }
     }
