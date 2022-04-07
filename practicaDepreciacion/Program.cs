@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace practicaDepreciacion
 {
     static class Program
@@ -29,7 +30,8 @@ namespace practicaDepreciacion
             builder.RegisterType<EmpleadoServices>().As<IEmpleadoServices>();
             var container = builder.Build();
             var container1 = builder1.Build();
-            Application.Run(new EmpleadoForm(container.Resolve<IEmpleadoServices>(), container1.Resolve<IActivoServices>()));
+            Application.Run(new Form1(container1.Resolve<IActivoServices>()));
+                /*(new EmpleadoForm(container.Resolve<IEmpleadoServices>(), container1.Resolve<IActivoServices>()));*/
 
         }
     }

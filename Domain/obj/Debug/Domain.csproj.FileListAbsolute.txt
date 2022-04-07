@@ -28,3 +28,9 @@ C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\Domain\obj\Debug\Domain.cspr
 C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\Domain\obj\Debug\Domain.dll
 C:\Users\JADPA27\Desktop\depreciacion\TareaPractica\Domain\obj\Debug\Domain.pdb
+C:\Users\JADPA27\Desktop\detalle\DetalleModel\Domain\bin\Debug\Domain.dll
+C:\Users\JADPA27\Desktop\detalle\DetalleModel\Domain\bin\Debug\Domain.pdb
+C:\Users\JADPA27\Desktop\detalle\DetalleModel\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\JADPA27\Desktop\detalle\DetalleModel\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\JADPA27\Desktop\detalle\DetalleModel\Domain\obj\Debug\Domain.dll
+C:\Users\JADPA27\Desktop\detalle\DetalleModel\Domain\obj\Debug\Domain.pdb

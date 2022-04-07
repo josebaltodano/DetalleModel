@@ -17,10 +17,10 @@ namespace practicaDepreciacion
     {
         IEmpleadoServices empleado;
         Empleado empleado4; 
-        IActivoServices activoServices;
-        public EmpleadoForm(IEmpleadoServices empleadoServices, IActivoServices ActivoServices)
+        //IActivoServices activoServices;
+        public EmpleadoForm(IEmpleadoServices empleadoServices /*IActivoServices ActivoServices*/)
         {
-            this.activoServices = ActivoServices;
+            //this.activoServices = ActivoServices;
             empleado = empleadoServices;
             InitializeComponent();
         }
@@ -61,14 +61,14 @@ namespace practicaDepreciacion
 
         private void dgvView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                Form1 activo = new Form1(activoServices,empleado.GetById(1));
-                activo.ShowDialog();
-            }
+            ////    if (e.RowIndex >= 0)
+            ////    {
+            ////        //Form1 activo = new Form1(activoServices);
+            ////        //activo.ShowDialog();
+            ////    }
         }
 
-        private void btnborrar_Click(object sender, EventArgs e)
+    private void btnborrar_Click(object sender, EventArgs e)
         {
             Empleado empleado2 = new Empleado()
             {
